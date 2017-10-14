@@ -1,7 +1,7 @@
 
 function valid(form){
 	// return false;
-	alert("haha");
+	// alert("haha");
 	var box = document.getElementById("errorMessage");
 	var name = form.name;
 	var subject = form.subject;
@@ -15,15 +15,15 @@ function valid(form){
 	if (!message.value)
 		{empty.push("message")}else{param["message"]=message.value;}
 	console.log(empty);
-	alert(empty);
+	// alert(empty);
 	if (empty.length!==0)
 		{box.innerHTML = getString(empty);
 			console.log("false");
-			alert("false");
+			// alert("false");
 			// form.submit(false);
 			return false;
 		}
-	alert("true");
+	// alert("true");
 	var url ="/contact?name="+name.value+"&message="+message.value+"&subject="+subject.value;
 	form.setAttribute("action",url);
 	form.submit(true);

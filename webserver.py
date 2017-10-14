@@ -52,8 +52,8 @@ def send():
 	print(result.status_code)
 	success = "Hi {}, your message has been sent".format(name)
 	if result.status_code==200:
-		print(success)
-	return render_template("index.html")
+		return render_template("contact_us.html",notifications = [success])
+	return render_template("contact_us.html")
 
 def send_simple_message(name,subject,message):
 	user = os.environ['INFO253_MAILGUN_USER']

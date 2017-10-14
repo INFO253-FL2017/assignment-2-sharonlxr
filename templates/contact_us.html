@@ -17,6 +17,14 @@
 		</header>
 		<div class="center">
 			<h1>Contact us</h1>
+			<div id="Result">
+			<ul>
+			    {% for notification in notifications %}
+			    <li>{{ notification }}</li>
+			    {% endfor %}
+			</ul>
+			<!-- Where the calculator answer will be displayed -->
+			</div>
 			<form onsubmit="event.preventDefault(); return valid(this);" method="post" id="form">
 				<p id ="errorMessage"><p>
 				Name: <input type="text" name="name" id="name"><br>

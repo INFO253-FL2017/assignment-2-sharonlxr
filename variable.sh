@@ -1,0 +1,5 @@
+export INFO253_MAILGUN_USER="api"
+export INFO253_MAILGUN_PASSWORD="key-a17538386618a4b4953619758057e10f"
+export INFO253_MAILGUN_FROM_EMAIL="postmaster@sandbox2d21bd3b6fd44e85b500927a8de402d6.mailgun.org"
+export INFO253_MAILGUN_TO_EMAIL="sharonlxr0206@163.com"
+export INFO253_MAILGUN_DOMAIN="sandbox2d21bd3b6fd44e85b500927a8de402d6.mailgun.org"
