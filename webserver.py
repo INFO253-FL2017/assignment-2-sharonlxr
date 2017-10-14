@@ -3,7 +3,8 @@ webserver.py
 
 File that is the central location of code for your webserver.
 """
-
+import os
+import requests
 from flask import Flask, render_template, request
 
 # Create application, and point static path (where static resources like images, css, and js files are stored) to the
@@ -47,13 +48,24 @@ def send():
 	name = request.form.get("name")
 	message = request.form.get("message")
 	subject = request.form.get("subject")
-	
+	result = send_simple_message(name,subject,message)
+	print(result.status_code)
+	success = "Hi {}, your message has been sent".format(name)
+	if result.status_code==200:
+		print(success)
 	return render_template("index.html")
-# @app.route('/contact_us',methods=['POST'])
-# def con():
-# 	name = request.form.get("name")
-# 	message = request.form.get("message")
-# 	subject = request.form.get("subject")
-# 	if len(name)==0 or len(message) ==0 or len(subject)==0:
-# 		return
 
+def send_simple_message(name,subject,message):
+	user = os.environ['INFO253_MAILGUN_USER']
+	key = os.environ['INFO253_MAILGUN_PASSWORD']
+	sender = os.environ['INFO253_MAILGUN_FROM_EMAIL']
+	receiver = os.environ['INFO253_MAILGUN_TO_EMAIL']
+	domain = os.environ['INFO253_MAILGUN_DOMAIN']
+	
+	from_add = name+" <"+sender+">"
+	to_add = "<"+receiver+">"
+
+	api="https://api.mailgun.net/v3/sandbox2d21bd3b6fd44e85b500927a8de402d6.mailgun.org/messages"
+	infodata={"from": from_add, "to": to_add,"subject": subject,"text": message}
+	return requests.post(api,auth=(user,key),data=infodata)
+    # return requests.post(api,auth=("api", "key-a17538386618a4b4953619758057e10f"),data={"from": from_add, "to": to_add,"subject": subject,"text": message})
