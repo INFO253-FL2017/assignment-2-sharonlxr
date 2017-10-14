@@ -65,7 +65,7 @@ def send_simple_message(name,subject,message):
 	from_add = name+" <"+sender+">"
 	to_add = "<"+receiver+">"
 
-	api="https://api.mailgun.net/v3/sandbox2d21bd3b6fd44e85b500927a8de402d6.mailgun.org/messages"
+	api="https://api.mailgun.net/v3/{}/messages".format(domain)
 	infodata={"from": from_add, "to": to_add,"subject": subject,"text": message}
 	return requests.post(api,auth=(user,key),data=infodata)
     # return requests.post(api,auth=("api", "key-a17538386618a4b4953619758057e10f"),data={"from": from_add, "to": to_add,"subject": subject,"text": message})
