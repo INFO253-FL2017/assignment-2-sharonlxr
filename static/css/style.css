@@ -1,3 +1,66 @@
-h1 {
+header, footer{
+	background-color: orange;
+}
+
+
+header>div{
+	font-size: 25px;
+	padding: 0;
+    margin: 0;
+}
+#indexHeader,footer{
+	color: #6600cc;
+}
+.indexList{
+	background-color: green;
+}
+footer,div.indexList,h1#indexHeader{
+
+	text-align: center;
+}
+
+.blogContainer{
+	padding: 0;
+    margin: 0;
+    margin-top: 0;
+	background-color: pink;
+	vertical-align: top
+}
+
+body {
+  margin-top: 0;
+}
+header{
+	margin-bottom: 0;
+}
+#comments{
+	text-align: center;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+.comments{
+	background-color: yellow;
+}
+.comments table {
+	background-color: blue;
+	font-size: large;
+	text-align: center;
+	width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+   	/*top:50%;*/
+ 
+}
+.comments table td{
+	text-align: center;
+	color: orange;
+}
+.comments h2{
 	color: blue;
+}
+.center,.comments{
+	text-align: center;
 }

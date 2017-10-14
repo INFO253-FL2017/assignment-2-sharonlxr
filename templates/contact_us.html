@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Contact US</title>
+		<script src="static/js/script.js"></script>
+		<link href="static/css/style.css" rel="stylesheet">
+		
+		<meta charset="utf-8"> 
+	</head>
+	<body>
+		<header>
+			<div>
+			<a href="./index.html">home</a>
+			<a href="./contact_us.html">contact us</a>
+			<a href="./about_us.html">about us</a>
+			</div>
+		</header>
+		<div class="center">
+			<h1>Contact us</h1>
+			<form onsubmit="event.preventDefault(); return valid(this);" method="post" id="form">
+				<p id ="errorMessage"><p>
+				Name: <input type="text" name="name" id="name"><br>
+
+				Subject: <input type="text" name="subject" id="subject"><br>
+				Message: <input type="text" name="message" id="message"><br>
+				<!-- <textarea name="subject"></textarea> -->
+				<input type="submit" value="Submit">
+				<!-- <button >Submit</button> -->
+			</form>
+			<!-- <p>We are from INFO 253.</p> -->
+		</div>
+		<footer>
+			<div>
+				<a href="./index.html">home</a>
+				<a href="./contact_us.html">contact us</a>
+				<a href="./about_us.html">about us</a>
+			</div>
+		</footer>
+	</body>
+</html>
+	
